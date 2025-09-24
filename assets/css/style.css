@@ -3,12 +3,15 @@ body {
   background-image: var(--body-bg-img);
 
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   transition: all 300ms;
 }
 
 /* Main container */
-.main-container {
+.page-container {
   display: grid;
   gap: var(--spacing-600);
 
@@ -16,6 +19,12 @@ body {
   max-width: 61.875rem;
 
   padding-top: 2rem;
+  padding-inline: var(--spacing-400);
+}
+
+.main-container {
+  display: grid;
+  gap: var(--spacing-600);
 }
 
 /* Header */
@@ -43,7 +52,10 @@ header {
 /* Main content */
 .main-title {
   text-align: center;
+  max-width: 31.875rem;
   color: var(--color-neutral-900);
+
+  justify-self: center;
 }
 
 /* Text area section */
@@ -55,6 +67,15 @@ header {
 .text-area-container {
   display: grid;
   gap: var(--spacing-150);
+}
+
+.error-chars-exceeded .error-text {
+  display: flex;
+}
+
+.error-chars-exceeded .text-area-wrapper .text-area {
+  border: 2px solid var(--color-orange-800);
+  box-shadow: 0 0 10px 0 var(--color-orange-800);
 }
 
 .text-area {
@@ -100,11 +121,178 @@ header {
 
 .error-text {
   color: var(--color-error);
-  display: flex;
+  display: none;
   align-items: center;
   gap: var(--spacing-100);
 }
 
 .error-text svg {
   fill: var(--color-error);
+}
+
+/* Text area options */
+.text-area-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+.options-container {
+  display: flex;
+  gap: var(--spacing-300);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: var(--radius-4);
+  border: 1px solid var(--checkbox-color);
+  flex-shrink: 0;
+  transition: all 200ms;
+  position: relative;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline-offset: 2px;
+  outline: 2px solid var(--color-purple-400);
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--checkbox-color-hover);
+}
+
+input[type="checkbox"]:checked {
+  border-color: var(--checkbox-color-checked);
+  background-color: var(--checkbox-color-checked);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  background-image: url("/assets/images/icon-check.svg");
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"]:checked:hover {
+  border-color: var(--checkbox-color-checked-hover);
+  background-color: var(--checkbox-color-checked-hover);
+}
+
+#character-limit:checked ~ .character-limit-input {
+  visibility: visible;
+}
+
+.character-limit-input {
+  visibility: hidden;
+  text-align: center;
+  border-radius: var(--radius-6);
+  border: 1px solid var(--char-limit-input-color);
+  padding: 0.25rem 0.75rem;
+  color: var(--text-secondary);
+  width: 3.5rem;
+}
+
+.character-limit-input:focus-visible {
+  outline-color: var(--color-purple-400);
+}
+
+/* Results section */
+.results-section {
+  display: grid;
+  gap: var(--spacing-300);
+  color: var(--text-secondary);
+}
+
+.stat-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-200);
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3125rem;
+  height: 9.375rem;
+  border-radius: var(--radius-12);
+  padding: var(--spacing-200);
+  background-repeat: no-repeat;
+  background-position: calc(100% + 1.75rem) center;
+}
+
+.stat-card--characters {
+  background-color: var(--color-purple-400);
+  background-image: url("/assets/images/pattern-character-count.svg");
+}
+
+.stat-card--words {
+  background-color: var(--color-yellow-500);
+  background-image: url("/assets/images/pattern-word-count.svg");
+}
+
+.stat-card--sentences {
+  background-color: var(--color-orange-500);
+  background-image: url("/assets/images/pattern-sentence-count.svg");
+}
+
+/* Letter density section */
+.letter-density-container {
+  display: grid;
+  gap: var(--spacing-250);
+}
+
+.density-chart {
+  display: grid;
+  gap: var(--spacing-150);
+}
+
+.density-chart-row {
+  display: grid;
+  grid-template-columns: 1rem 1fr 5.5rem;
+  gap: 0.875rem;
+  align-items: center;
+}
+
+.density-progress-bar {
+  appearance: none;
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.see-more-btn {
+  display: flex;
+  gap: var(--spacing-100);
+  align-items: center;
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  justify-self: start;
+}
+
+.see-more-btn:hover {
+}
+
+.see-more-btn svg {
+  fill: var(--text-secondary);
 }

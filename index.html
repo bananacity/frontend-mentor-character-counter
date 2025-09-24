@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="main-container">
+    <div class="page-container">
       <header>
         <img
           src="assets/images/logo-light-theme.svg"
@@ -28,14 +28,13 @@
         </button>
       </header>
 
-      <main>
+      <main class="main-container">
         <h1 class="main-title text-preset-1">
-          Analyze your text<br />
-          in real-time.
+          Analyze your text in real-time.
         </h1>
 
-        <div class="text-area-section">
-          <div class="text-area-container">
+        <section class="text-area-section">
+          <div class="text-area-container error-chars-exceeded">
             <div class="text-area-wrapper">
               <textarea
                 placeholder="Start typing here... (or paste your text)"
@@ -62,7 +61,78 @@
               <span>99999999999</span> characters.
             </p>
           </div>
-        </div>
+
+          <div class="text-preset-4 text-area-options">
+            <div class="options-container">
+              <div class="checkbox-container">
+                <input type="checkbox" id="exclude-spaces" />
+                <label for="exclude-spaces">Exclude Spaces</label>
+              </div>
+
+              <div class="checkbox-container">
+                <input type="checkbox" id="character-limit" />
+                <label for="character-limit">Set Character Limit</label>
+                <input
+                  type="number"
+                  min="0"
+                  max="999"
+                  class="character-limit-input text-preset-4"
+                />
+              </div>
+            </div>
+
+            <p>Approx. reading time: <span>&lt;1</span> minute</p>
+          </div>
+        </section>
+
+        <section class="results-section">
+          <div class="stat-card-container">
+            <div class="stat-card stat-card--characters">
+              <span class="text-preset-1">999</span>
+              <p class="text-preset-3">Total Characters</p>
+            </div>
+
+            <div class="stat-card stat-card--words">
+              <span class="text-preset-1">999</span>
+              <p class="text-preset-3">Word Count</p>
+            </div>
+
+            <div class="stat-card stat-card--sentences">
+              <span class="text-preset-1">999</span>
+              <p class="text-preset-3">Sentence Count</p>
+            </div>
+          </div>
+
+          <div class="letter-density-container">
+            <h2 class="text-preset-2">Letter Density</h2>
+
+            <div class="density-chart">
+              <div class="density-chart-row">
+                <span class="text-preset-4">E</span>
+                <progress
+                  value="50"
+                  max="100"
+                  class="density-progress-bar"
+                ></progress>
+                <span><span>40</span> (<span>16.06</span>%)</span>
+              </div>
+            </div>
+
+            <button class="see-more-btn text-preset-3">
+              <p>See more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="7"
+                viewBox="0 0 12 7"
+              >
+                <path
+                  d="M5.71875 6.375L1.09375 1.78125C0.9375 1.65625 0.9375 1.40625 1.09375 1.25L1.71875 0.65625C1.875 0.5 2.09375 0.5 2.25 0.65625L6 4.34375L9.71875 0.65625C9.875 0.5 10.125 0.5 10.25 0.65625L10.875 1.25C11.0312 1.40625 11.0312 1.65625 10.875 1.78125L6.25 6.375C6.09375 6.53125 5.875 6.53125 5.71875 6.375Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </section>
       </main>
     </div>
 

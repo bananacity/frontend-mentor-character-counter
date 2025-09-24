@@ -63,6 +63,16 @@
   --text-area-bg-hover: var(--color-neutral-200);
   --text-area-color: var(--color-neutral-700);
   --text-area-color-hover: var(--color-neutral-900);
+
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-900);
+
+  --checkbox-color: var(--color-neutral-900);
+  --checkbox-color-hover: var(--color-neutral-600);
+  --checkbox-color-checked: var(--color-purple-400);
+  --checkbox-color-checked-hover: var(--color-purple-500);
+
+  --char-limit-input-color: var(--color-neutral-600);
 }
 
 [data-theme="dark"] {
@@ -140,6 +150,16 @@
 
 textarea {
   font: inherit;
+}
+
+/* Remove number input arrows */
+.character-limit-input::-webkit-outer-spin-button,
+.character-limit-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.character-limit-input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 body {
