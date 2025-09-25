@@ -56,7 +56,7 @@ function renderLetterDensity(letterData) {
 
   densityChart.innerHTML = "";
 
-  if (lettersToShow === 0) {
+  if (lettersToShow.length === 0) {
     document.querySelector(".density-chart-wrapper").classList.remove("active");
     document.querySelector(".letter-density-text").classList.remove("hidden");
     return;

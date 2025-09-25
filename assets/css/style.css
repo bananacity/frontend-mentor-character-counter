@@ -95,10 +95,33 @@ header {
   color: var(--text-area-color-hover);
 }
 
+.text-area:hover + .text-area-char-count {
+  background-color: var(--text-area-bg-hover);
+}
+
 .text-area:focus {
   outline: none;
   border: 2px solid var(--color-purple-500);
   box-shadow: 0 0 10px 0 var(--color-purple-400);
+}
+
+.text-area::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.text-area::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--radius-4);
+  margin-block: var(--spacing-100);
+}
+
+.text-area::-webkit-scrollbar-thumb {
+  background: var(--color-purple-400);
+  border-radius: var(--radius-4);
+}
+
+.text-area::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-purple-500);
 }
 
 .text-area-wrapper {
@@ -109,14 +132,13 @@ header {
   position: absolute;
   bottom: 0.75rem;
   right: 0.75rem;
-  color: var(--text-area-color);
-  opacity: 65%;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-4);
+  color: var(--color-neutral-600);
+  background-color: var(--text-area-bg);
   font-weight: 500;
   pointer-events: none;
-}
-
-.text-area-char-count:hover {
-  color: var(--text-area-color-hover);
+  transition: all 300ms;
 }
 
 .error-text-chars {
@@ -384,5 +406,9 @@ input[type="checkbox"]:checked:hover {
 
   .stat-card {
     height: 8.125rem;
+  }
+
+  .main-container {
+    gap: var(--spacing-500);
   }
 }
