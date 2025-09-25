@@ -134,7 +134,7 @@ header {
   right: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-4);
-  color: var(--color-neutral-600);
+  color: var(--text-tertiary);
   background-color: var(--text-area-bg);
   font-weight: 500;
   pointer-events: none;
