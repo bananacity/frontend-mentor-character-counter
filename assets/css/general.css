@@ -53,7 +53,7 @@
 :root,
 [data-theme="light"] {
   --body-bg-color: var(var(--color-neutral-0));
-  --body-bg-img: url("/assets/images/bg-light-theme.png");
+  --body-bg-img: url("../images/bg-light-theme.png");
 
   --theme-btn-bg: var(--color-neutral-100);
   --theme-btn-bg-hover: var(--color-neutral-200);
@@ -82,7 +82,7 @@
 
 [data-theme="dark"] {
   --body-bg-color: var(var(--color-neutral-900));
-  --body-bg-img: url("/assets/images/bg-dark-theme.png");
+  --body-bg-img: url("../images/bg-dark-theme.png");
 
   --theme-btn-bg: var(--color-neutral-700);
   --theme-btn-bg-hover: var(--color-neutral-600);
@@ -112,14 +112,14 @@
 /* Typography */
 @font-face {
   font-family: "DM Sans";
-  src: url("/assets/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf");
+  src: url("../fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf");
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "DM Sans";
-  src: url("/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+  src: url("../fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf");
   font-style: italic;
   font-display: swap;
 }
