@@ -198,7 +198,7 @@ input[type="checkbox"]:checked {
 
 input[type="checkbox"]:checked::after {
   content: "";
-  background-image: url("/assets/images/icon-check.svg");
+  background-image: url("./assets/images/icon-check.svg");
   position: absolute;
   height: 12px;
   width: 12px;
@@ -259,17 +259,17 @@ input[type="checkbox"]:checked:hover {
 
 .stat-card--characters {
   background-color: var(--color-purple-400);
-  background-image: url("/assets/images/pattern-character-count.svg");
+  background-image: url("./assets/images/pattern-character-count.svg");
 }
 
 .stat-card--words {
   background-color: var(--color-yellow-500);
-  background-image: url("/assets/images/pattern-word-count.svg");
+  background-image: url("./assets/images/pattern-word-count.svg");
 }
 
 .stat-card--sentences {
   background-color: var(--color-orange-500);
-  background-image: url("/assets/images/pattern-sentence-count.svg");
+  background-image: url("./assets/images/pattern-sentence-count.svg");
 }
 
 .no-spaces-text {
