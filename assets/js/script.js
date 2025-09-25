@@ -167,10 +167,11 @@ function calculateResults() {
   } else {
     readingTimeMinutes = Math.round(readingTimeMinutes);
     readingTimeText =
-      readingTimeMinutes + ` minute${readingTimeMinutes === 1 ? "" : "s"}`;
+      addCommas(readingTimeMinutes) +
+      ` minute${readingTimeMinutes === 1 ? "" : "s"}`;
   }
 
-  readingTimeDisplay.textContent = addCommas(readingTimeText);
+  readingTimeDisplay.textContent = readingTimeText;
 
   totalCharactersDisplay.textContent = addCommas(totalCharacters);
   totalWordsDisplay.textContent = addCommas(totalWords);
