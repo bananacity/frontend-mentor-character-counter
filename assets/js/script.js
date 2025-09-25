@@ -124,7 +124,7 @@ function calculateResults() {
     ? text.replace(/\s/g, "").length
     : text.length;
 
-  characterCountDisplay.textContent = currentCharacterCount;
+  characterCountDisplay.textContent = addCommas(currentCharacterCount);
 
   if (characterLimitEnabled) {
     characterLimitContainer.classList.remove("hidden");
@@ -170,7 +170,7 @@ function calculateResults() {
       readingTimeMinutes + ` minute${readingTimeMinutes === 1 ? "" : "s"}`;
   }
 
-  readingTimeDisplay.textContent = readingTimeText;
+  readingTimeDisplay.textContent = addCommas(readingTimeText);
 
   totalCharactersDisplay.textContent = addCommas(totalCharacters);
   totalWordsDisplay.textContent = addCommas(totalWords);
