@@ -84,7 +84,7 @@ function renderLetterDensity(letterData) {
 
   if (letterData.length > 5) {
     seeMoreBtn.style.display = "flex";
-    const buttonText = seeMoreBtn.querySelector("p");
+    const buttonText = seeMoreBtn.querySelector("span");
 
     if (showAllLetters) {
       buttonText.textContent = "See less";
