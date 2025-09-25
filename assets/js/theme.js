@@ -24,11 +24,11 @@ function handleThemeChange(e) {
 
   // Change images
   if (selectedTheme === "light") {
-    logoImg.src = "/assets/images/logo-light-theme.svg";
-    themeIcon.src = "/assets/images/icon-moon.svg";
+    logoImg.src = "../images/logo-light-theme.svg";
+    themeIcon.src = "../images/icon-moon.svg";
   } else {
-    logoImg.src = "/assets/images/logo-dark-theme.svg";
-    themeIcon.src = "/assets/images/icon-sun.svg";
+    logoImg.src = "../images/logo-dark-theme.svg";
+    themeIcon.src = "../images/icon-sun.svg";
   }
 }
 
