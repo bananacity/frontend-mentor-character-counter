@@ -18,8 +18,7 @@ body {
   width: 100%;
   max-width: 61.875rem;
 
-  padding-top: 2rem;
-  padding-inline: var(--spacing-400);
+  padding: 2rem var(--spacing-400) 2rem var(--spacing-400);
 }
 
 .main-container {
@@ -53,7 +52,7 @@ header {
 .main-title {
   text-align: center;
   max-width: 31.875rem;
-  color: var(--color-neutral-900);
+  color: var(--text-primary);
 
   justify-self: center;
 }
@@ -92,6 +91,7 @@ header {
 
 .text-area:hover {
   background-color: var(--text-area-bg-hover);
+  border-color: var(--text-area-border-hover);
   color: var(--text-area-color-hover);
 }
 
@@ -119,15 +119,32 @@ header {
   color: var(--text-area-color-hover);
 }
 
+.error-text-chars {
+  color: var(--color-error);
+  opacity: 100%;
+}
+
+.character-limit-container {
+  display: contents;
+}
+
+.character-limit-container.hidden {
+  display: none;
+}
+
 .error-text {
   color: var(--color-error);
   display: none;
   align-items: center;
-  gap: var(--spacing-100);
+}
+
+.error-text span {
+  padding-inline: 0.3ch;
 }
 
 .error-text svg {
   fill: var(--color-error);
+  margin-right: var(--spacing-100);
 }
 
 /* Text area options */
@@ -206,11 +223,12 @@ input[type="checkbox"]:checked:hover {
   border: 1px solid var(--char-limit-input-color);
   padding: 0.25rem 0.75rem;
   color: var(--text-secondary);
+  background-color: transparent;
   width: 3.5rem;
 }
 
-.character-limit-input:focus-visible {
-  outline-color: var(--color-purple-400);
+.character-limit-input:focus {
+  outline: 2px solid var(--color-purple-500);
 }
 
 /* Results section */
@@ -224,6 +242,7 @@ input[type="checkbox"]:checked:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-200);
+  color: var(--color-neutral-900);
 }
 
 .stat-card {
@@ -253,10 +272,34 @@ input[type="checkbox"]:checked:hover {
   background-image: url("/assets/images/pattern-sentence-count.svg");
 }
 
+.no-spaces-text {
+  display: contents;
+}
+
+.no-spaces-text.hidden {
+  display: none;
+}
+
 /* Letter density section */
 .letter-density-container {
   display: grid;
   gap: var(--spacing-250);
+}
+
+.letter-density-text {
+  color: var(--text-tertiary);
+}
+
+.letter-density-text.hidden {
+  display: none;
+}
+
+.density-chart-wrapper {
+  display: none;
+}
+
+.density-chart-wrapper.active {
+  display: contents;
 }
 
 .density-chart {
@@ -271,12 +314,26 @@ input[type="checkbox"]:checked:hover {
   align-items: center;
 }
 
+.letter-column {
+  text-align: center;
+}
+
 .density-progress-bar {
   appearance: none;
   width: 100%;
+  height: 0.75rem;
   border: none;
   border-radius: var(--radius-full);
   overflow: hidden;
+}
+
+.density-progress-bar::-webkit-progress-bar {
+  background-color: var(--progress-bg-color);
+}
+
+.density-progress-bar::-webkit-progress-value {
+  background-color: var(--progress-color);
+  border-radius: var(--radius-full);
 }
 
 .see-more-btn {
@@ -288,11 +345,44 @@ input[type="checkbox"]:checked:hover {
   border: none;
   cursor: pointer;
   justify-self: start;
+  transition: all 200ms;
 }
 
 .see-more-btn:hover {
+  color: var(--color-purple-500);
+}
+
+.see-more-btn:hover svg {
+  fill: var(--color-purple-500);
 }
 
 .see-more-btn svg {
+  transition: all 200ms;
   fill: var(--text-secondary);
+}
+
+.icon-chevron-down.hidden,
+.icon-chevron-up.hidden {
+  display: none;
+}
+
+/* Responsive design */
+@media (width <= 39rem) {
+  .options-container {
+    display: grid;
+    gap: var(--spacing-150);
+  }
+
+  .text-area-options {
+    display: grid;
+    gap: var(--spacing-150);
+  }
+
+  .stat-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    height: 8.125rem;
+  }
 }
