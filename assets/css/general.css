@@ -52,7 +52,7 @@
 /* Themes */
 :root,
 [data-theme="light"] {
-  --body-bg-color: var(var(--color-neutral-0));
+  --body-bg-color: var(--color-neutral-0);
   --body-bg-img: url("../images/bg-light-theme.png");
 
   --theme-btn-bg: var(--color-neutral-100);
@@ -81,7 +81,7 @@
 }
 
 [data-theme="dark"] {
-  --body-bg-color: var(var(--color-neutral-900));
+  --body-bg-color: var(--color-neutral-900);
   --body-bg-img: url("../images/bg-dark-theme.png");
 
   --theme-btn-bg: var(--color-neutral-700);
